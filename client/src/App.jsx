@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="app__ wrapper">
       <Chat client={client}>
-        <ChanellListContainer/>
+        <ChannelListContainer/>
 
         <ChannelContainer/>
          
