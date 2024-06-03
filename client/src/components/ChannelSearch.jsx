@@ -32,7 +32,7 @@ const ChannelSearch = () => {
                 <input type="text"
                     className="channel-search__input__text"
                     placeholder="search" 
-                    jiuhvalue={query}
+                    value={query}
                     onChange={onSearch}
                 />
             </div>
