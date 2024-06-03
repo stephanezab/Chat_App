@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useChatContext } from 'stream-chat-react'
-import { SearchIcon } from '../assets'
+//import { SearchIcon } from '../assets'
 
 
 const ChannelSearch = () => {
@@ -16,7 +16,8 @@ const ChannelSearch = () => {
     }
 
     const onSearch = (event) => {
-        event.preventDefaut()
+        event.preventDefault()
+        console.log(event.target.value)
 
         setLoading(true)
         setQuery(event.target.value)
@@ -26,11 +27,12 @@ const ChannelSearch = () => {
         <div className="channel-search__container">
             <div className="channel-search__input__wrapper">
                 <div className="channel-search__input__icon">
-                    <SearchIcon />
+                    {/* search icon here */}
                 </div>
                 <input type="text"
                     className="channel-search__input__text"
-                    placeholder="search" value={query}
+                    placeholder="search" 
+                    jiuhvalue={query}
                     onChange={onSearch}
                 />
             </div>
