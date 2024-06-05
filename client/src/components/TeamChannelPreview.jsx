@@ -21,6 +21,7 @@ const TeamChannelPreview = ({ channel, type}) => {
                 <Avatar
                 image={members[0]?.user?.image}
                 name={members[0]?.user?.fullName}
+                size={24}
                 />
                 <p>{members[0]?.user?.fullName}</p>
             </div>
@@ -30,7 +31,15 @@ const TeamChannelPreview = ({ channel, type}) => {
 
 
     return (
-        <div>
+        <div className={
+            channel?.id == activeChannel?.id 
+            ? "channel-preview__wrapper__selected"
+            : "channel-preview__wrapper"
+        }
+        onClick={() =>{
+            console.log(channel)
+        }}>
+            {type == "team" ? <ChannelPreview/> : <DirectPreview/>}iijijijininin
 
         </div>
     )
