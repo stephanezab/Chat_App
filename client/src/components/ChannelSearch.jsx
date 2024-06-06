@@ -17,7 +17,7 @@ const ChannelSearch = () => {
 
     const onSearch = (event) => {
         event.preventDefault()
-        console.log(event.target.value)
+        // console.log(event.target.value)
 
         setLoading(true)
         setQuery(event.target.value)
