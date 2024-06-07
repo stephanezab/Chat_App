@@ -16,10 +16,15 @@ const initialState = {
 const Auth = () => {
 
     const [form, setForm] = useState(initialState)
-    const [isSignup, setIsSignup] = useState(false)
+    const [isSignup, setIsSignup] = useState(true)
 
     const handleChange = (e) => {
         setForm({...form, [e.target.name]: e.target.value})
+        //console.log(form)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()  // for not reloading page
         console.log(form)
     }
 
@@ -32,7 +37,7 @@ const Auth = () => {
             <div className="auth__form-container_fields">
                 <div className="auth__form-container_fields-content">
                     <p>{isSignup ? "Sign Up" : "Sign In"}</p>
-                    <form onSubmit={() => { }}>
+                    <form onSubmit={handleSubmit}>
                         {isSignup && (
                             <div className="auth__form-container_fields-content_input">
                                 <label htmlFor="fullName">Full Name</label>
