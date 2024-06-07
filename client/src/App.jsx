@@ -1,5 +1,5 @@
 import React from 'react'
-import { StreamChat } from 'Stream-chat'
+import { StreamChat } from 'stream-chat'
 import { Chat } from 'stream-chat-react'
 import Cookies from 'universal-cookie'
 import './App.css';
