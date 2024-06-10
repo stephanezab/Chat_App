@@ -18,9 +18,17 @@ const Auth = () => {
     const [form, setForm] = useState(initialState)
     const [isSignup, setIsSignup] = useState(true)
 
-    const handleChange = (e) => {
+    const handleChange = async (e) => {
         setForm({...form, [e.target.name]: e.target.value})
         //console.log(form)
+        // Sending data to the backend
+        const {fullName, username, password, phoneNumber, avatarURL} = form
+        const URL = "http://localhost:5000/auth"
+
+        const {data: { token, userID, hashedPasseword }} = await axios.post(`${URL}/${isSignup ? "signup": "login"}`, {
+            username, password, fullName, phoneNumber, avatarURL,
+        }) 
+    
     }
 
     const handleSubmit = (e) => {
