@@ -39,7 +39,7 @@ const TeamChannelPreview = ({ channel, type}) => {
         onClick={() =>{
             console.log(channel)
         }}>
-            {type == "team" ? <ChannelPreview/> : <DirectPreview/>}iijijijininin
+            {type == "team" ? <ChannelPreview/> : <DirectPreview/>}
 
         </div>
     )

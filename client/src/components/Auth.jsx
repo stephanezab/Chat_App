@@ -28,7 +28,7 @@ const Auth = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault()  // for not reloading page
-        // console.log(form)
+        console.log(form)
         // Sending data to the backend
         const {fullName, username, password, phoneNumber, avatarURL} = form
         const URL = "http://localhost:5000/auth"
@@ -41,6 +41,7 @@ const Auth = () => {
         cookies.set("username", username)
         cookies.set("fullname", fullName)
         cookies.set("userId", userId)
+        
 
         if(isSignup){
             cookies.set("phoneNumber", phoneNumber)
