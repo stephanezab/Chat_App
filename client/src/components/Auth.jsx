@@ -4,6 +4,8 @@ import Cookies from 'universal-cookie'
 
 import signinImage from '../assets/signup.jpg'
 
+const cookies = new Cookies()
+
 const initialState = {
     fullName: "",
     username: "",
@@ -18,22 +20,35 @@ const Auth = () => {
     const [form, setForm] = useState(initialState)
     const [isSignup, setIsSignup] = useState(true)
 
-    const handleChange = async (e) => {
+    const handleChange = (e) => {
         setForm({...form, [e.target.name]: e.target.value})
         //console.log(form)
+    
+    }
+
+    const handleSubmit = async(e) => {
+        e.preventDefault()  // for not reloading page
+        // console.log(form)
         // Sending data to the backend
         const {fullName, username, password, phoneNumber, avatarURL} = form
         const URL = "http://localhost:5000/auth"
 
-        const {data: { token, userID, hashedPasseword }} = await axios.post(`${URL}/${isSignup ? "signup": "login"}`, {
+        const {data: { token, userId, hashedPassword }} = await axios.post(`${URL}/${isSignup ? "signup": "login"}`, {
             username, password, fullName, phoneNumber, avatarURL,
-        }) 
-    
-    }
+        })
+        
+        cookies.set("token", token)
+        cookies.set("username", username)
+        cookies.set("fullname", fullName)
+        cookies.set("userId", userId)
 
-    const handleSubmit = (e) => {
-        e.preventDefault()  // for not reloading page
-        console.log(form)
+        if(isSignup){
+            cookies.set("phoneNumber", phoneNumber)
+            cookies.set("avatarURL", avatarURL)
+            cookies.set("hashedPassword", hashedPassword)
+        }
+        
+        window.location.reload() // reloading app (App.jsx) so authToken = True
     }
 
     const switchMode = () => {

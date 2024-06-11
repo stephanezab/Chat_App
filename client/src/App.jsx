@@ -5,11 +5,13 @@ import Cookies from 'universal-cookie'
 import './App.css';
 
 import { ChannelListContainer, ChannelContainer, Auth } from './components'
-
+const cookies = new Cookies()
 const apikey = 'yasqhy2bxhjp';
+const authToken = false
+
 const client = StreamChat.getInstance(apikey);
 
-const authToken = false
+
 
 function App() {
 
