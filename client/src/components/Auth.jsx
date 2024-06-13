@@ -16,9 +16,9 @@ const initialState = {
 }
 
 const Auth = () => {
-
+g
     const [form, setForm] = useState(initialState)
-    const [isSignup, setIsSignup] = useState(true)
+    const [isSignup, setIsSignup] = useState(false)
 
     const handleChange = (e) => {
         setForm({...form, [e.target.name]: e.target.value})
