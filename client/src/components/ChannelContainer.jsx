@@ -4,7 +4,7 @@ import {ChannelInner, CreateChannel, EditChannel, TeamMessage } from "./"
 
 const ChannelContainer = (isCreating, setIsCreating, isEditing, setIsEditing, createType) => {
   
-  const {channel} = useChatContext()
+  const {channe} = useChatContext()
 
   if(isCreating){
     return(
