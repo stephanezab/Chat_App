@@ -7,7 +7,7 @@ import 'steam-chat-react/dist/css/index.css' // for a better looking chat app
 
 import { ChannelListContainer, ChannelContainer, Auth } from './components'
 const cookies = new Cookies()
-const apikey = 'yasqhy2bxhjp';
+const apikey = 'yasqhy2bxhjp';o
 
 const authToken = cookies.get("token")
 console.log(authToken)
