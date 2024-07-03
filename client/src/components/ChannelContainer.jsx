@@ -7,6 +7,7 @@ const ChannelContainer = (isCreating, setIsCreating, isEditing, setIsEditing, cr
   const {channel} = useChatContext()
 
   if(isCreating){
+    // are we creating this channel
     return(
       <div className="channel__container">
         <CreateChannel createType={createType} setIsCreating={setIsCreating}/>
