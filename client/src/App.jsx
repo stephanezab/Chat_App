@@ -39,7 +39,7 @@ function App() {
     <div className="app__wrapper">
       <Chat client={client} theme="team light">
         <ChannelListContainer
-          isCreating={isCreating}
+          isCreating={isCreating
           setIsCreating={setIsCreating}
           setCreateType={setCreateType}
           setIsEditing={setIsEditing}
