@@ -16,7 +16,7 @@ const initialState = {
 }
 
 const Auth = () => {
-g
+
     const [form, setForm] = useState(initialState)
     const [isSignup, setIsSignup] = useState(false)
 
